@@ -1,7 +1,7 @@
 package com.test.artist.external.artists
 
-import ayds.newyork.songinfo.moredetails.data.external.nytimes.NYTimesArtistService
 import ayds.newyork.songinfo.moredetails.presentation.view.ArtistInfoHelperImpl
+import com.test.artist.external.NYTimesArtistService
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
