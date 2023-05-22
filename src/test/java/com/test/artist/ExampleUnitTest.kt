@@ -1,4 +1,4 @@
-package com.test.nytimesdata
+package com.test.artist
 
 import org.junit.Test
 
