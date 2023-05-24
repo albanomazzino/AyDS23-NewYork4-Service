@@ -1,6 +1,6 @@
 package com.test.artist.external.artists
 
-import ayds.newyork.songinfo.moredetails.domain.entities.Artist.NYTimesArtist
+import com.test.artist.external.entities.Artist.NYTimesArtist
 import com.test.artist.external.NYTimesArtistService
 import retrofit2.Response
 

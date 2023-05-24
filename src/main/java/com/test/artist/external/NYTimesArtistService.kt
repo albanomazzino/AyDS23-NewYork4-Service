@@ -1,7 +1,7 @@
 package com.test.artist.external
 
-import ayds.newyork.songinfo.moredetails.domain.entities.Artist.NYTimesArtist
+import com.test.artist.external.entities.Artist
 
 interface NYTimesArtistService {
-    fun getArtist(artistName: String): NYTimesArtist?
+    fun getArtist(artistName: String): Artist.NYTimesArtist?
 }
