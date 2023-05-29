@@ -1,18 +1,15 @@
 package com.test.artist.external.artists
 
 import com.test.artist.external.entities.Artist.NYTimesArtist
-import com.test.artist.external.entities.ArtistInfoHelper
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 
 interface NYTimesToArtistResolver {
-    fun getArtistFromExternalData(serviceData: String?, artistName: String): NYTimesArtist?
+    fun getArtistFromExternalData(serviceData: String?): NYTimesArtist?
 }
 
-internal class JsonToArtistResolver(
-    private val artistHelper: ArtistInfoHelper
-) : NYTimesToArtistResolver {
+internal class JsonToArtistResolver : NYTimesToArtistResolver {
     companion object {
         const val JSON_OBJECT_DOCS = "docs"
         const val JSON_OBJECT_WEB_URL = "web_url"
@@ -20,13 +17,12 @@ internal class JsonToArtistResolver(
         const val JSON_OBJECT_ABSTRACT = "abstract"
     }
 
-    override fun getArtistFromExternalData(serviceData: String?, artistName: String): NYTimesArtist? =
+    override fun getArtistFromExternalData(serviceData: String?): NYTimesArtist? =
         try {
             val responseInJson = apiResponseToJsonObject(serviceData)
-            val documentAbstractArtist = getDocumentAbstract(responseInJson)
             NYTimesArtist(
                 getArtistUrl(responseInJson),
-                artistHelper.formatAbstractArtist(documentAbstractArtist, artistName)
+                getDocumentAbstract(responseInJson)
             )
         } catch (e: Exception){
             null

@@ -1,6 +1,5 @@
 package com.test.artist.external.artists
 
-import com.test.artist.external.entities.ArtistInfoHelperImpl
 import com.test.artist.external.NYTimesArtistService
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -13,9 +12,7 @@ object NYTimesArtistInjector {
         .addConverterFactory(ScalarsConverterFactory.create())
         .build()
     private val nyTimesApi: NYTimesArtistAPI = nyTimesApiRetrofit.create(NYTimesArtistAPI::class.java)
-    private val nyTimesToArtistResolver: NYTimesToArtistResolver = JsonToArtistResolver(
-        ArtistInfoHelperImpl()
-    )
+    private val nyTimesToArtistResolver: NYTimesToArtistResolver = JsonToArtistResolver()
 
     val nyTimesArtistService: NYTimesArtistService = NYTimesArtistServiceImpl(
         nyTimesApi,

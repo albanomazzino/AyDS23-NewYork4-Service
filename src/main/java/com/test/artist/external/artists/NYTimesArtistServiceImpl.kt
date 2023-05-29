@@ -10,7 +10,7 @@ internal class NYTimesArtistServiceImpl(
 ) : NYTimesArtistService {
     override fun getArtist(artistName: String): NYTimesArtist? {
         val callResponse = getArtistFromService(artistName)
-        return nyTimesToArtistResolver.getArtistFromExternalData(callResponse.body(), artistName)
+        return nyTimesToArtistResolver.getArtistFromExternalData(callResponse.body())
     }
 
     private fun getArtistFromService(artistName: String): Response<String> {
