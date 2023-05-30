@@ -4,10 +4,8 @@ const val NY_TIMES_LOGO_URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:A
 
 sealed class Artist {
     data class NYTimesArtist(
-        var url: String? = null,
         var info: String,
-        var isLocallyStored: Boolean = false,
-        var logoImageUrl: String = NY_TIMES_LOGO_URL,
+        var url: String? = null
     ): Artist()
     object EmptyArtist: Artist()
 }

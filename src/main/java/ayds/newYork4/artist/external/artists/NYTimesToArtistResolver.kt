@@ -21,8 +21,8 @@ internal class JsonToArtistResolver : NYTimesToArtistResolver {
         try {
             val responseInJson = apiResponseToJsonObject(serviceData)
             NYTimesArtist(
-                getArtistUrl(responseInJson),
-                getDocumentAbstract(responseInJson)
+                getDocumentAbstract(responseInJson),
+                getArtistUrl(responseInJson)
             )
         } catch (e: Exception){
             null
