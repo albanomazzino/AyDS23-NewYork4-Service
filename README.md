@@ -18,6 +18,6 @@ New York Times External Service provided by AyDS23-NewYork4 Team.
 - `Artist` is a `sealed class` encapsulating `NYTimesArtist` and `EmptyArtist`. The former has 4 attributes: `url`, `info`, `isLocallyStored`, and `logoImageUrl`, whilst the latter has none.
   - `NYTimesArtist`
     - `url: String?` contains the URL to a full article on The New York Times website. Use this URL in a button or anchor to link to more information about the artist. The default value is `null`.
-    - `info: JsonElement` contains a brief description of the artist.
+    - `info: String` contains a brief description of the artist.
     - `isLocallyStored: Boolean` allows you to manage whether this information is loaded from local storage or our service. Our service will always set this value to `false`.
     - `logoImageUrl: String` contains the URL to The New York Times service logo.
