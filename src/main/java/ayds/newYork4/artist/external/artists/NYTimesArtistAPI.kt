@@ -1,4 +1,4 @@
-package com.test.artist.external.artists
+package ayds.newYork4.artist.external.artists
 
 import retrofit2.Call
 import retrofit2.http.GET

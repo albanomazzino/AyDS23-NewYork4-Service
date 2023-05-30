@@ -1,6 +1,6 @@
-package com.test.artist.external.artists
+package ayds.newYork4.artist.external.artists
 
-import com.test.artist.external.entities.Artist.NYTimesArtist
+import ayds.newYork4.artist.external.entities.Artist.NYTimesArtist
 import com.google.gson.Gson
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
@@ -33,8 +33,8 @@ internal class JsonToArtistResolver : NYTimesToArtistResolver {
         return jsonObject[JSON_OBJECT_RESPONSE].asJsonObject
     }
 
-    private fun getDocumentAbstract(responseInJson: JsonObject): JsonElement {
-        return getDocument(responseInJson)[JSON_OBJECT_ABSTRACT]
+    private fun getDocumentAbstract(responseInJson: JsonObject): String {
+        return getDocument(responseInJson)[JSON_OBJECT_ABSTRACT].asString
     }
 
     private fun getDocument(responseInJson: JsonObject): JsonObject {

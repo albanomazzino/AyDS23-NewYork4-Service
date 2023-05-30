@@ -1,7 +1,7 @@
-package com.test.artist.external.artists
+package ayds.newYork4.artist.external.artists
 
-import com.test.artist.external.entities.Artist.NYTimesArtist
-import com.test.artist.external.NYTimesArtistService
+import ayds.newYork4.artist.external.entities.Artist.NYTimesArtist
+import ayds.newYork4.artist.external.NYTimesArtistService
 import retrofit2.Response
 
 internal class NYTimesArtistServiceImpl(
