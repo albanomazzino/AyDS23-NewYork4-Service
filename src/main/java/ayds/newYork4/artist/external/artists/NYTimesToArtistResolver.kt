@@ -42,9 +42,11 @@ internal class JsonToArtistResolver : NYTimesToArtistResolver {
         return documents[0].asJsonObject
     }
 
-    private fun getArtistUrl(responseInJson: JsonObject?):String? {
-        return responseInJson?.let {
-            return getDocumentUrl(it).asString
+    private fun getArtistUrl(responseInJson: JsonObject?):String {
+        return if(responseInJson != null){
+            getDocumentUrl(responseInJson).asString
+        } else {
+            ""
         }
     }
 
